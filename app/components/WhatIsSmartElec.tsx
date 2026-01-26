@@ -24,7 +24,7 @@ const FeatureItem = ({ text }: FeatureItemProps) => (
 
 export default function WhatIsSmartElec() {
     return (
-        <section className="w-full bg-[#F8F8F8] pb-[80px] pt-[50px]">
+        <section className="w-full bg-white pb-[80px] pt-[50px]">
             <div className="max-w-[1440px] mx-auto">
                 {/* Header */}
                 <div className="relative flex justify-between items-start mb-[43px]">
