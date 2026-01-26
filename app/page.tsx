@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import WhatIsSmartElec from "./components/WhatIsSmartElec";
+import Features from "./components/Features";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Header />
       </div>
       <WhatIsSmartElec />
+      <Features />
     </main>
   );
 }
