@@ -10,11 +10,13 @@ export default function Header() {
   return (
     <>
       <header 
-        className="fixed top-0 left-0 backdrop-blur-md right-0 z-50 flex items-center justify-between px-[20px] lg:px-[60px] min-h-[96px] lg:h-auto lg:py-[12px]"
+        className="fixed top-0 left-0 backdrop-blur-md right-0 z-50 flex items-end lg:items-center justify-between px-[20px] lg:px-[60px] min-h-[96px] lg:h-auto lg:py-[12px]"
         style={{
           background: "linear-gradient(90deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.12) 100%)",
-          paddingTop: "max(env(safe-area-inset-top, 0px), 12px)",
-          paddingBottom: "12px"
+          paddingTop: "50px",
+          paddingBottom: "12px",
+          borderTopLeftRadius: "0",
+          borderTopRightRadius: "0",
         }}
       >
         {/* Logo and Brand Name */}

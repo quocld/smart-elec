@@ -5,9 +5,9 @@ export default function Hero() {
     <div className="relative w-full min-h-[812px] h-auto md:h-[700px] lg:h-[822px] pb-8 md:pb-0">
       {/* Background Image/Gradient */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Mobile Background - Gradient */}
+        {/* Background Gradient - All screens */}
         <div 
-          className="absolute inset-0 lg:hidden"
+          className="absolute inset-0"
           style={{
             background: "linear-gradient(180deg, #266EF8 0%, #07DFC5 100%)"
           }}
@@ -36,7 +36,7 @@ export default function Hero() {
           src="/assets/hero-bg.png"
           alt="Hero Background Texture"
           fill
-          className="object-cover hidden lg:block"
+          className="object-cover hidden lg:block opacity-30"
           priority
         />
         {/* Engineer Image - Desktop only */}
@@ -96,19 +96,25 @@ export default function Hero() {
           alt="Phone Mockup"
           width={1920}
           height={1080}
+          unoptimized
           style={{
             position: "absolute",
-            left: "20px",
-            top: "400px",
-            width: "auto",
-            height: "240px",
-            opacity: 1,
+            width: "420px",
+            maxWidth: "none",
+            left: "23%",
+            bottom: "30px",
+            height: "auto",
+            transform: "translateX(-50%) scale(1.5)",
+            transformOrigin: "center bottom",
+            objectFit: "contain",
           }}
           className="z-20 block lg:hidden"
         />
         {/* Coaching Text - Mobile */}
-        <div className="absolute left-[280px] top-[460px] text-white leading-[140%] font-normal tracking-[0.01em] text-[12px] w-[140px] block lg:hidden z-30">
-            Un coaching numérique pour vous aider dans vos problèmes électriques et répondre à vos questions.
+        <div className="absolute left-[42%] bottom-[90px] text-white leading-[120%] font-normal tracking-[0.01em] text-[12px] w-[180px] block lg:hidden z-30">
+            Un coaching numérique pour vous
+            aider dans vos problèmes électriques
+            et répondre à vos questions.
         </div>
         {/* Coaching Text - Desktop */}
         <div className="absolute bottom-[90px] text-end right-[400px] text-white leading-[155%] font-normal tracking-[0.01em] w-[319px] h-[87px] text-[16px] hidden xl:block">
@@ -119,8 +125,8 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <section className="relative z-10 flex flex-col items-start justify-center min-h-[600px] md:h-[700px] lg:h-full px-4 sm:px-6 md:px-[40px] lg:px-[60px] pt-20 md:pt-0">
-        <div className="flex flex-col items-start gap-2 sm:gap-[6px] md:gap-[8px] w-full">
+      <section className="relative z-10 flex flex-col items-start pt-32 md:justify-center md:pt-0 min-h-[600px] md:h-[700px] lg:h-full px-5 sm:px-6 md:px-[40px] lg:px-[60px] pt-0 md:pt-20 md:pt-0">
+        <div className="flex flex-col items-start sm:gap-[6px] md:gap-[8px] w-full">
            <div className="flex flex-row gap-2 flex-wrap">
             <Image 
               src="/assets/guard.png" 
@@ -138,19 +144,19 @@ export default function Hero() {
             L&apos;EXPERTISE ÉLECTRIQUE À PORTÉE MAIN
           </h1>
 
-          <p className="text-[14px] sm:text-[16px] md:text-[18px] text-white font-medium leading-[22px] sm:leading-[26px] md:leading-[29px] tracking-[0.02em] max-w-full md:max-w-[600px] mb-4 md:mb-2 mt-2 sm:mt-4">
+          <p className="text-[14px] sm:text-[16px] md:text-[18px] text-white font-medium leading-[20px] sm:leading-[26px] md:leading-[29px] tracking-[0.02em] max-w-full md:max-w-[600px] mb-4 md:mb-2 mt-2 sm:mt-4">
             SmartElec regroupe des outils, des normes, des guides, une IA
             spécialisée et des connexions professionnelles pour soutenir tous
             vos projets électriques.
           </p>
 
-          <button className="bg-[#266EF8] mt-[8px] sm:mt-[12px] text-white w-full sm:w-[262px] h-[50px] sm:h-[57px] rounded-[12px] p-[14px] sm:p-[16px] flex items-center justify-center gap-[8px] sm:gap-[10px] hover:bg-[#1e5ad1] transition-all">
+          <button className="bg-[#266EF8] w-fix sm:mt-[12px] text-white sm:w-[262px] h-[50px] sm:h-[57px] rounded-[12px] p-[14px] sm:p-[16px] flex items-center justify-center gap-[8px] sm:gap-[10px] hover:bg-[#1e5ad1] transition-all">
             <Image
               src="/assets/arrow-down.svg"
               alt="Download"
-              width={20}
-              height={20}
-              className="w-4 h-4 sm:w-5 sm:h-5"
+              width={24}
+              height={24}
+              className="w-6 h-6"
             />
             <span className="font-bold text-[14px] sm:text-[16px] leading-[155%] tracking-[0.01em]">
               Télécharger l&apos;application
