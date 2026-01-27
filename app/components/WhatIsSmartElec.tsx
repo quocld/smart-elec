@@ -28,7 +28,7 @@ export default function WhatIsSmartElec() {
             <div className="max-w-[1440px] mx-auto">
                 {/* Header */}
                 <div className="relative flex justify-between items-start mb-[43px]">
-                    <div className="max-w-[600px]">
+                    <div className="max-w-[600px] px-[20px]">
                         <h2
                             className="text-[40px] font-extrabold leading-[60px] tracking-[0.02em] text-[#1A1A1A] mb-1"
                         >

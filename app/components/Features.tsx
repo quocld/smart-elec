@@ -1,18 +1,22 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 interface FeatureCardProps {
     image: string;
-    title: string;
+    title: ReactNode;
+    alt?: string;
     subtitle: string;
     className?: string;
+    variant?: "default" | "top-title" | "mid-title";
+    titleSize?: "small" | "medium" | "large";
     imageScale?: number;
 }
 
-const FeatureCard = ({ image, title, subtitle, className = "", imageScale }: FeatureCardProps) => (
+const FeatureCard = ({ image, variant, title, alt, subtitle, className = "", imageScale, titleSize = "medium" }: FeatureCardProps) => (
     <div className={`relative rounded-[32px] overflow-hidden ${className}`}>
         <Image
             src={image}
-            alt={title}
+            alt={alt ?? (typeof title === "string" ? title : "Feature")}
             fill
             className="object-cover"
             style={imageScale ? { transform: `scale(${imageScale})` } : undefined}
@@ -20,11 +24,11 @@ const FeatureCard = ({ image, title, subtitle, className = "", imageScale }: Fea
             quality={100}
             unoptimized
         />
-        <div className="absolute inset-0 p-[24px] flex flex-col justify-end">
-            <h3 className="text-[32px] font-bold leading-[35px] tracking-[0.02em] text-white mb-[8px]">
+        <div className={`absolute inset-0 p-[24px] flex flex-col justify-end ${variant === "top-title" ? "justify-start" : variant === "mid-title" ? "max-w-[500px] bottom-[60px] left-[42%]" : "justify-end"}`}>
+            <h3 className={`font-bold leading-[35px] tracking-[0.02em] text-white mb-[8px] ${titleSize === "small" ? "text-[24px] leading-[24px] mt-[-10px]" : titleSize === "medium" ? "text-[32px]" : "text-[48px] leading-[52px]"}`}>
                 {title}
             </h3>
-            <p className="text-[14px] font-medium leading-[24px] text-white/90">
+            <p className={`text-[14px] font-medium leading-[24px] text-white/90 ${titleSize === "small" ? "max-w-[280px] mt-[-10px]" : ""} ${variant === "top-title" ? "max-w-[300px]" : ""}`}>
                 {subtitle}
             </p>
         </div>
@@ -33,7 +37,7 @@ const FeatureCard = ({ image, title, subtitle, className = "", imageScale }: Fea
 
 export default function Features() {
     return (
-        <section className="w-full bg-white py-[100px]" style={{ minHeight: "1784px" }}>
+        <section id="features" className="w-full bg-white py-[100px]" style={{ minHeight: "1784px" }}>
             <div className="max-w-[1240px] mx-auto px-[20px]">
                 {/* Header */}
                 <div className="text-center mb-[60px]">
@@ -57,6 +61,8 @@ export default function Features() {
                                 title="IA spécialisée en électricité"
                                 subtitle="Réponses à toutes vos questions techniques ou pratiques. Compréhension des normes NF C 15-100. Interaction par texte ou voix."
                                 className="row-span-6"
+                                variant="mid-title"
+                                titleSize="large"
                             />
                             {/* Bottom row - 2 small cards */}
                             <div className="row-span-4 grid grid-cols-2 gap-[20px]">
@@ -90,9 +96,16 @@ export default function Features() {
                             {/* Card 3 - Guides pratiques */}
                             <FeatureCard
                                 image="/assets/card-5.png"
-                                title="Guides pratiques et outils"
+                                title={
+                                    <>
+                                        Guides pratiques et <br />
+                                        outils
+                                    </>
+                                }
+                                alt="Guides pratiques et outils"
                                 subtitle="Guides et cours en génie électrique. Calculatrices, listes de contrôle de sécurité. Recommandations d'équipements adaptés."
                                 className="row-span-6"
+                                variant="top-title"
                             />
                         </div>
                     </div>
@@ -104,6 +117,8 @@ export default function Features() {
                             image="/assets/card-6.png"
                             title="Réseautage professionnel"
                             subtitle="Trouvez un professionnel à proximité. Gagnez en visibilité grâce à l'annuaire SmartElec."
+                            variant="top-title"
+                            titleSize="small"
                         />
                         {/* Card 7 - Conseil pour les entrepreneurs */}
                         <FeatureCard
