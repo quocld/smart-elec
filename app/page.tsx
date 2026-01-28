@@ -6,6 +6,7 @@ import ComingSoon from "./components/ComingSoon";
 import Plans from "./components/Plans";
 import ApplicationDownload from "./components/ApplicationDownload";
 import Footer from "./components/Footer";
+import Reveal from "./components/motion/Reveal";
 
 export default function Home() {
   return (
@@ -14,12 +15,24 @@ export default function Home() {
         <Hero />
         <Header />
       </div>
-      <WhatIsSmartElec />
-      <Features />
-      <ComingSoon />
-      <Plans />
-      <ApplicationDownload />
-      <Footer />
+      <Reveal as="section" animation="slideLeft">
+        <WhatIsSmartElec />
+      </Reveal>
+      <Reveal as="section" animation="fadeScale">
+        <Features />
+      </Reveal>
+      <Reveal as="section" animation="fadeUp">
+        <ComingSoon />
+      </Reveal>
+      <Reveal as="section" animation="slideIn">
+        <Plans />
+      </Reveal>
+      <Reveal as="section" animation="fadeScale">
+        <ApplicationDownload />
+      </Reveal>
+      <Reveal as="section" animation="fadeOnly">
+        <Footer />
+      </Reveal>
     </main>
   );
 }
