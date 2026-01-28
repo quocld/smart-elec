@@ -82,8 +82,7 @@ export default function Plans() {
   return (
     <section
       id="pricing"
-      className="w-full bg-white"
-      style={{ minHeight: "1044px" }}
+      className="w-full bg-white min-h-[660px] md:min-h-[1044px]"
     >
       <div className="max-w-[1240px] mx-auto md:px-[20px] py-6 md:py-[90px]">
         <div className="text-center mb-[24px] md:mb-[52px]">
