@@ -10,11 +10,9 @@ export default function Header() {
   return (
     <>
       <header 
-        className="fixed top-0 left-0 backdrop-blur-md right-0 z-50 flex items-end lg:items-center justify-between px-[20px] lg:px-[60px] min-h-[96px] lg:h-auto lg:py-[12px]"
+        className="fixed top-0 left-0 backdrop-blur-md right-0 z-50 flex items-end lg:items-center justify-between px-[20px] lg:px-[60px] pt-[50px] lg:pt-0 min-h-[96px] lg:min-h-0 lg:h-[73px] pb-[12px] lg:pb-0"
         style={{
           background: "linear-gradient(90deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.12) 100%)",
-          paddingTop: "50px",
-          paddingBottom: "12px",
           borderTopLeftRadius: "0",
           borderTopRightRadius: "0",
         }}
