@@ -4,9 +4,9 @@ const ThunderIcon = () => (
     <Image
         src="/assets/akar-icons_thunder.svg"
         alt="Thunder"
-        width={11}
-        height={11}
-        className="w-[11px] h-[11px]"
+        width={24}
+        height={24}
+        className="w-[11px] h-[11px] lg:w-[24px] lg:h-[24px]"
     />
 );
 
@@ -31,22 +31,18 @@ export default function WhatIsSmartElec() {
                 <div className="relative flex justify-between items-start mb-[20px] lg:mb-[43px] px-[20px] lg:px-0">
                     <div className="max-w-full lg:max-w-[600px]">
                         <h2
-                            className="text-[20px] lg:text-[40px] font-extrabold leading-[120%] lg:leading-[60px] tracking-[0.02em] lg:tracking-[0.02em] text-[#1A1A1A] mb-1"
-                            style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800 }}
+                            className="text-[20px] lg:text-[40px] font-extrabold leading-[120%] lg:leading-[60px] tracking-[0.02em] text-[#1A1A1A] mb-1"
                         >
                             Qu&apos;est ce que SmartElec ?
                         </h2>
-                        <p 
-                            className="text-[12px] lg:text-[16px] font-medium leading-[140%] lg:leading-[24px] tracking-[0%] lg:tracking-normal text-[#4A4A4A]"
-                            style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 500 }}
-                        >
+                        <p className="text-[12px] lg:text-[16px] font-medium leading-[140%] lg:leading-[24px] text-[#4A4A4A]">
                             Un outil multifonction créé par des experts
                             <br className="lg:hidden" />
                             <span className="hidden lg:inline"> </span>
-                            pour les professionnels et particuliers
+                            pour les professionnels
                             <br className="lg:hidden" />
                             <span className="hidden lg:inline"><br /></span>
-                            travaillant dans le domaine électrique.
+                            et particuliers travaillant dans le domaine électrique.
                         </p>
                     </div>
                     {/* Desktop decor image */}
@@ -95,7 +91,7 @@ export default function WhatIsSmartElec() {
                         />
 
                         {/* Content */}
-                        <div className="absolute inset-0 pt-[20px] px-[20px] pb-[20px] lg:pt-[54px] lg:px-[25px] lg:pb-0 flex flex-col justify-between lg:gap-[60px]">
+                        <div className="absolute inset-0 pt-[20px] px-[20px] pb-[20px] lg:pt-[54px] lg:px-[25px] lg:pb-0 flex flex-col justify-between lg:justify-start lg:gap-[60px]">
                             <div>
                                 <h3 className="text-[24px] lg:text-[60px] font-extrabold leading-[28px] lg:leading-[60px] tracking-[0.02em] text-white mb-2 lg:mb-3">
                                     Professionnels de
@@ -134,7 +130,7 @@ export default function WhatIsSmartElec() {
                         />
 
                         {/* Content */}
-                        <div className="absolute inset-0 pt-[20px] px-[20px] pb-[20px] lg:p-[40px] flex flex-col justify-between lg:gap-[60px]">
+                        <div className="absolute inset-0 pt-[20px] px-[20px] pb-[20px] lg:p-[40px] flex flex-col justify-between lg:justify-start lg:gap-[60px]">
                             <div>
                                 <h3 className="text-[24px] lg:text-[60px] font-extrabold leading-[28px] lg:leading-[60px] tracking-[0.02em] text-white mb-2 lg:mb-3">
                                     Particuliers /
