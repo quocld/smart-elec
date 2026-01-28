@@ -51,7 +51,46 @@ const items: ComingSoonItem[] = [
   },
 ];
 
+const ComingSoonCard = ({ item, index }: { item: ComingSoonItem; index: number }) => (
+  <div
+    key={`${item.title}-${index}`}
+    className="shrink-0 w-[225px] h-[100.5px] rounded-[13.5px] border-[0.75px] border-[#E8EDF2] bg-white pt-[13.5px] pr-[10.5px] pb-[13.5px] pl-[21px]"
+  >
+    <div className="relative w-[36px] h-[36px] rounded-[10px] bg-[#0CCECD33] flex items-center justify-center mb-[2px] md:mb-[12px]">
+      <Image
+        src={item.iconSrc}
+        alt={item.iconAlt}
+        width={22}
+        height={22}
+        className="w-[18px] h-[18px] object-contain"
+      />
+      {item.decoratorSrc && (
+        <div className="absolute top-[4px] left-[2px]">
+          <Image
+            src={item.decoratorSrc}
+            alt="Decorator"
+            width={14}
+            height={14}
+            className="w-[12px] h-[12px] object-contain"
+          />
+        </div>
+      )}
+    </div>
+    <p className="text-black text-[13px] font-semibold leading-[18px] whitespace-pre-line">
+      {item.title}
+    </p>
+  </div>
+);
+
 export default function ComingSoon() {
+  // Chia items thành 2 hàng: hàng 1 (0-3), hàng 2 (4-7)
+  const row1 = items.slice(0, 4);
+  const row2 = items.slice(4, 8);
+  
+  // Duplicate để tạo seamless loop
+  const duplicatedRow1 = [...row1, ...row1];
+  const duplicatedRow2 = [...row2, ...row2];
+
   return (
     <section className="w-full bg-white py-[40px] lg:py-[90px]">
       <div className="max-w-[1240px] mx-auto px-[20px]">
@@ -75,74 +114,21 @@ export default function ComingSoon() {
           </p>
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="lg:hidden overflow-x-auto scrollbar-hide -mx-[20px] px-[20px]">
-          <div className="flex gap-[12px] mb-[14px] snap-x snap-mandatory scroll-smooth">
-            {items.map((it) => (
-              <div
-                key={it.title}
-                className=" w-[calc(100vw-60px)] max-w-[280px] snap-start rounded-[12px] border border-[#E8EDF2] bg-white px-[20px] py-[16px] min-h-[100px]"
-              >
-                <div className="relative w-[36px] h-[36px] rounded-[10px] bg-[#0CCECD33] flex items-center justify-center mb-[12px]">
-                  <Image
-                    src={it.iconSrc}
-                    alt={it.iconAlt}
-                    width={22}
-                    height={22}
-                    className="w-[18px] h-[18px] object-contain"
-                  />
-                  {it.decoratorSrc && (
-                    <div className="absolute top-[4px] left-[2px]">
-                      <Image
-                        src={it.decoratorSrc}
-                        alt="Decorator"
-                        width={14}
-                        height={14}
-                        className="w-[12px] h-[12px] object-contain"
-                      />
-                    </div>
-                  )}
-                </div>
-                <p className="text-black text-[13px] font-semibold leading-[18px] whitespace-pre-line">
-                  {it.title}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex gap-[12px] translate-x-[-100px] snap-x snap-mandatory scroll-smooth">
-            {items.map((it) => (
-              <div
-                key={it.title}
-                className="flex-shrink-0 w-[calc(100vw-60px)] max-w-[280px] snap-start rounded-[12px] border border-[#E8EDF2] bg-white px-[20px] py-[16px] min-h-[100px]"
-              >
-                <div className="relative w-[36px] h-[36px] rounded-[10px] bg-[#0CCECD33] flex items-center justify-center mb-[12px]">
-                  <Image
-                    src={it.iconSrc}
-                    alt={it.iconAlt}
-                    width={22}
-                    height={22}
-                    className="w-[18px] h-[18px] object-contain"
-                  />
-                  {it.decoratorSrc && (
-                    <div className="absolute top-[4px] left-[2px]">
-                      <Image
-                        src={it.decoratorSrc}
-                        alt="Decorator"
-                        width={14}
-                        height={14}
-                        className="w-[12px] h-[12px] object-contain"
-                      />
-                    </div>
-                  )}
-                </div>
-                <p className="text-black text-[13px] font-semibold leading-[18px] whitespace-pre-line">
-                  {it.title}
-                </p>
-              </div>
+        {/* Mobile Banner - 2 hàng x 4 items tự động chạy */}
+        <div className="lg:hidden overflow-hidden -mx-[20px] px-[20px]">
+          {/* Row 1 - Chạy từ phải sang trái */}
+          <div className="flex gap-[12px] mb-[12px] animate-scroll-left">
+            {duplicatedRow1.map((item, idx) => (
+              <ComingSoonCard key={`row1-${idx}`} item={item} index={idx} />
             ))}
           </div>
           
+          {/* Row 2 - Chạy từ trái sang phải (ngược lại) */}
+          <div className="flex gap-[12px] animate-scroll-right">
+            {duplicatedRow2.map((item, idx) => (
+              <ComingSoonCard key={`row2-${idx}`} item={item} index={idx} />
+            ))}
+          </div>
         </div>
 
         {/* Desktop Grid */}
