@@ -67,7 +67,7 @@ export default function ComingSoon() {
             <span>En développement</span>
           </div>
 
-          <h2 className="mt-[14px] lg:mt-[18px] text-[28px] lg:text-[44px] font-extrabold leading-[36px] lg:leading-[56px] tracking-[0.02em] text-[#1A1A1A]">
+          <h2 className="mt-[14px] lg:mt-[18px] text-[20px] lg:text-[44px] font-extrabold leading-[36px] lg:leading-[56px] tracking-[0.02em] text-[#1A1A1A]">
             À venir bientôt
           </h2>
           <p className="mt-[8px] lg:mt-[10px] text-[14px] lg:text-[16px] font-medium leading-[20px] lg:leading-[24px] text-[#555252] max-w-full lg:max-w-[400px] mx-auto px-[20px] lg:px-0">
@@ -81,7 +81,7 @@ export default function ComingSoon() {
             {items.map((it) => (
               <div
                 key={it.title}
-                className="flex-shrink-0 w-[calc(100vw-60px)] max-w-[280px] snap-start rounded-[12px] border border-[#E8EDF2] bg-white px-[20px] py-[16px] min-h-[100px]"
+                className=" w-[calc(100vw-60px)] max-w-[280px] snap-start rounded-[12px] border border-[#E8EDF2] bg-white px-[20px] py-[16px] min-h-[100px]"
               >
                 <div className="relative w-[36px] h-[36px] rounded-[10px] bg-[#0CCECD33] flex items-center justify-center mb-[12px]">
                   <Image
