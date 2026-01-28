@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import AnimatedFeatureCard from "./motion/AnimatedFeatureCard";
+import AnimatedHeader from "./motion/AnimatedHeader";
 
 interface FeatureCardProps {
     image: string;
@@ -42,29 +44,26 @@ export default function Features() {
     return (
         <section id="features" className="w-full bg-white lg:py-[100px]" style={{ minHeight: "auto" }}>
             <div className="max-w-[1240px] mx-auto px-[6px] md:px-[20px]">
-                {/* Header */}
-                <div className="text-center mb-[40px] lg:mb-[60px]">
-                    <h2 className="text-[20px] lg:text-[40px] font-extrabold leading-[26px] lg:leading-[60px] tracking-[0.02em] text-[#1A1A1A] mb-2">
-                        Fonctionnalités principales
-                    </h2>
-                    <p className="text-[12px] lg:text-[16px] font-medium leading-[12px] lg:leading-[24px] text-[#4A4A4A]">
-                        Tous les outils dont vous avez besoin, réunis dans une seule application.
-                    </p>
-                </div>
+                {/* Animated Header */}
+                <AnimatedHeader
+                    title="Fonctionnalités principales"
+                    subtitle="Tous les outils dont vous avez besoin, réunis dans une seule application."
+                />
 
                 {/* Mobile Layout - Single Column */}
                 <div className="flex flex-col gap-[12px] lg:hidden">
                     {/* Card 1 - IA spécialisée */}
-                    <FeatureCard
-                                image="/assets/card-1.png"
-                                title="IA spécialisée en électricité"
-                                subtitle="Réponses à toutes vos questions techniques ou pratiques. Compréhension des normes NF C 15-100. Interaction par texte ou voix."
-                                className="h-[320px]"
-                                titleSize="small"
-                                variant="mid-title"
+                    <AnimatedFeatureCard
+                        image="/assets/card-1.png"
+                        title="IA spécialisée en électricité"
+                        subtitle="Réponses à toutes vos questions techniques ou pratiques. Compréhension des normes NF C 15-100. Interaction par texte ou voix."
+                        className="h-[320px]"
+                        titleSize="small"
+                        variant="mid-title"
+                        index={0}
                     />
                     {/* Card 2 - Accès aux règles */}
-                    <FeatureCard
+                    <AnimatedFeatureCard
                         image="/assets/card-2.png"
                         title="Accès aux règles du métier"
                         subtitle="Fiches d'information claires et accessibles. Explications simplifiées pour les non-experts. Mises à jour en temps réel."
@@ -72,10 +71,10 @@ export default function Features() {
                         variant="default"
                         subtitleClassName="text-[12px] text-[#FFFFFFB2] leading-[17px]"
                         titleBoxClassName="mb-[20px]"
-
+                        index={1}
                     />
                     {/* Card 3 - Guides pratiques */}
-                    <FeatureCard
+                    <AnimatedFeatureCard
                         image="/assets/card-5.png"
                         title={
                             <>
@@ -89,56 +88,62 @@ export default function Features() {
                         subtitleClassName="text-[12px] text-[#FFFFFFB2] leading-[17px]"
                         titleBoxClassName="mt-[16px]"
                         variant="top-title"
+                        index={2}
                     />
                     {/* Card 4 - Formation complète */}
                     <div className="grid grid-cols-2 gap-[12px]">
-                    <FeatureCard
-                        image="/assets/card-3.png"
-                        title="Formation complète"
-                        subtitle="Modules de formation en génie électrique, pour les connaissances de base ou plus avancées."
-                        className="h-[221px]"
-                        titleSize="x-small"
-                        variant="default"
-                    />
-                    {/* Card 5 - Aide au chiffrage */}
-                    <FeatureCard
-                        image="/assets/card-4.png"
-                        title="Aide au chiffrage de vos devis"
-                        subtitle="Support pour les estimations de prix des prestations courantes."
-                        className="h-[221px]"
-                        titleSize="x-small"
-                        variant="default"
-                    />
+                        <AnimatedFeatureCard
+                            image="/assets/card-3.png"
+                            title="Formation complète"
+                            subtitle="Modules de formation en génie électrique, pour les connaissances de base ou plus avancées."
+                            className="h-[221px]"
+                            titleSize="x-small"
+                            variant="default"
+                            index={3}
+                        />
+                        {/* Card 5 - Aide au chiffrage */}
+                        <AnimatedFeatureCard
+                            image="/assets/card-4.png"
+                            title="Aide au chiffrage de vos devis"
+                            subtitle="Support pour les estimations de prix des prestations courantes."
+                            className="h-[221px]"
+                            titleSize="x-small"
+                            variant="default"
+                            index={4}
+                        />
                     </div>
                     
                     {/* Card 6 - Réseautage professionnel */}
-                    <FeatureCard
+                    <AnimatedFeatureCard
                         image="/assets/card-6.png"
                         title="Réseautage professionnel"
                         subtitle="Trouvez un professionnel à proximité. Gagnez en visibilité grâce à l'annuaire SmartElec."
                         className="h-[344px]"
                         variant="top-title"
                         titleSize="medium"
+                        index={5}
                     />
                     {/* Card 7 - Conseil pour les entrepreneurs */}
                     <div className="grid grid-cols-2 gap-[12px]">
-                    <FeatureCard
-                        image="/assets/card-7.png"
-                        title="Conseil pour les entrepreneurs"
-                        subtitle="Conseils sur les obligations, les normes, les litiges. Bien démarrer son activité pro."
-                        className="h-[190px]"
-                        titleSize="x-small"
-                        variant="default"
-                    />
-                    {/* Card 8 - Notifications essentielles */}
-                    <FeatureCard
-                        image="/assets/card-8.png"
-                        title="Notifications essentielles"
-                        subtitle="Changements standards. Nouveaux guides et mises à jour techniques livrés à vous."
-                        className="h-[190px]"
-                        titleSize="x-small"
-                        variant="default"
-                    />
+                        <AnimatedFeatureCard
+                            image="/assets/card-7.png"
+                            title="Conseil pour les entrepreneurs"
+                            subtitle="Conseils sur les obligations, les normes, les litiges. Bien démarrer son activité pro."
+                            className="h-[190px]"
+                            titleSize="x-small"
+                            variant="default"
+                            index={6}
+                        />
+                        {/* Card 8 - Notifications essentielles */}
+                        <AnimatedFeatureCard
+                            image="/assets/card-8.png"
+                            title="Notifications essentielles"
+                            subtitle="Changements standards. Nouveaux guides et mises à jour techniques livrés à vous."
+                            className="h-[190px]"
+                            titleSize="x-small"
+                            variant="default"
+                            index={7}
+                        />
                     </div>
                 </div>
 
@@ -149,29 +154,32 @@ export default function Features() {
                         {/* Left Column - 6 cols */}
                         <div className="col-span-6 h-full grid grid-rows-10 gap-[20px]">
                             {/* Card 1 - IA spécialisée */}
-                            <FeatureCard
+                            <AnimatedFeatureCard
                                 image="/assets/card-1.png"
                                 title="IA spécialisée en électricité"
                                 subtitle="Réponses à toutes vos questions techniques ou pratiques. Compréhension des normes NF C 15-100. Interaction par texte ou voix."
                                 className="row-span-6"
                                 variant="mid-title"
                                 titleSize="large"
+                                index={0}
                             />
                             {/* Bottom row - 2 small cards */}
                             <div className="row-span-4 grid grid-cols-2 gap-[20px]">
                                 {/* Card 4 - Formation complète */}
-                                <FeatureCard
+                                <AnimatedFeatureCard
                                     image="/assets/card-3.png"
                                     title="Formation complète"
                                     subtitle="Modules de formation en génie électrique, pour les connaissances de base ou plus avancées."
                                     className="col-span-1"
+                                    index={1}
                                 />
                                 {/* Card 5 - Aide au chiffrage */}
-                                <FeatureCard
+                                <AnimatedFeatureCard
                                     image="/assets/card-4.png"
                                     title="Aide au chiffrage de vos devis"
                                     subtitle="Support pour les estimations de prix des prestations courantes."
                                     className="col-span-1"
+                                    index={2}
                                 />
                             </div>
                         </div>
@@ -179,15 +187,16 @@ export default function Features() {
                         {/* Right Column - 4 cols */}
                         <div className="col-span-4 grid grid-rows-10 gap-[20px]">
                             {/* Card 2 - Accès aux règles */}
-                            <FeatureCard
+                            <AnimatedFeatureCard
                                 image="/assets/card-2.png"
                                 title="Accès aux règles du métier"
                                 subtitle="Fiches d'information claires et accessibles. Explications simplifiées pour les non-experts. Mises à jour en temps réel."
                                 className="row-span-4"
                                 imageScale={1.05}
+                                index={3}
                             />
                             {/* Card 3 - Guides pratiques */}
-                            <FeatureCard
+                            <AnimatedFeatureCard
                                 image="/assets/card-5.png"
                                 title={
                                     <>
@@ -199,6 +208,7 @@ export default function Features() {
                                 subtitle="Guides et cours en génie électrique. Calculatrices, listes de contrôle de sécurité. Recommandations d'équipements adaptés."
                                 className="row-span-6"
                                 variant="top-title"
+                                index={4}
                             />
                         </div>
                     </div>
@@ -206,24 +216,27 @@ export default function Features() {
                     {/* Row 3 */}
                     <div className="grid grid-cols-3 gap-[20px] h-[340px]">
                         {/* Card 6 - Réseautage professionnel */}
-                        <FeatureCard
+                        <AnimatedFeatureCard
                             image="/assets/card-6.png"
                             title="Réseautage professionnel"
                             subtitle="Trouvez un professionnel à proximité. Gagnez en visibilité grâce à l'annuaire SmartElec."
                             variant="top-title"
                             titleSize="small"
+                            index={5}
                         />
                         {/* Card 7 - Conseil pour les entrepreneurs */}
-                        <FeatureCard
+                        <AnimatedFeatureCard
                             image="/assets/card-7.png"
                             title="Conseil pour les entrepreneurs"
                             subtitle="Conseils sur les obligations, les normes, les litiges. Bien démarrer son activité pro."
+                            index={6}
                         />
                         {/* Card 8 - Notifications essentielles */}
-                        <FeatureCard
+                        <AnimatedFeatureCard
                             image="/assets/card-8.png"
                             title="Notifications essentielles"
                             subtitle="Changements standards. Nouveaux guides et mises à jour techniques livrés à vous."
+                            index={7}
                         />
                     </div>
                 </div>
