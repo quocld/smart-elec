@@ -14,6 +14,8 @@ const productLinks: FooterLink[] = [
 
 const supportLinks: FooterLink[] = [
   { label: "Contact", href: "#contact" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Documentation", href: "#documentation" },
 ];
 
 const legalLinks: FooterLink[] = [
@@ -30,7 +32,7 @@ function FooterColumn({
   links: FooterLink[];
 }) {
   return (
-    <div className="min-w-[160px]">
+    <div className="min-w-[140px] md:min-w-[160px]">
       <div className="text-[14px] font-bold leading-[22px] text-[#111827] mb-[14px]">
         {title}
       </div>
@@ -52,11 +54,11 @@ function FooterColumn({
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-[#E5E7EB] mt-[100px]">
-      <div className="max-w-[1240px] mx-auto px-[20px] h-[314px] flex items-center">
-        <div className="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-[28px]">
+    <footer className="w-full bg-white border-t border-[#E5E7EB] mt-[60px] md:mt-[100px]">
+      <div className="max-w-[1240px] mx-auto px-[16px] md:px-[20px] py-[40px] md:py-0 md:h-[314px] flex items-center">
+        <div className="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-[32px] md:gap-[28px]">
           {/* Left */}
-          <div className="max-w-[420px]">
+          <div className="max-w-[420px] w-full">
             <div className="flex items-center gap-[10px] mb-[14px]">
               <Image
                 src="/assets/logo.png"
@@ -66,7 +68,7 @@ export default function Footer() {
                 className="object-contain"
               />
               <span
-                className="font-extrabold text-[32px] leading-[155%] tracking-[0.04em] bg-clip-text text-transparent"
+                className="font-extrabold text-[28px] md:text-[32px] leading-[155%] tracking-[0.04em] bg-clip-text text-transparent"
                 style={{
                   background:
                     "linear-gradient(90deg, #266EF8 0%, #07DFC5 100%)",
@@ -78,14 +80,14 @@ export default function Footer() {
               </span>
             </div>
 
-            <p className="text-[13px] leading-[20px] font-medium text-[#6B7280] max-w-[260px]">
+            <p className="text-[13px] leading-[20px] font-medium text-[#6B7280] max-w-[320px] md:max-w-[260px]">
               L&apos;application dédiée aux électriciens et aux passionnés de
               bricolage pour un travail électrique sûr et guidé.
             </p>
 
             <a
               href="mailto:support@smartelec.tech"
-              className="inline-block mt-[14px] text-[13px] font-medium leading-[20px] text-[#2563EB] hover:underline"
+              className="inline-block mt-[14px] text-[13px] font-medium leading-[20px] text-[#5100FF] hover:underline"
             >
               support@smartelec.tech
             </a>
@@ -96,7 +98,7 @@ export default function Footer() {
           </div>
 
           {/* Right columns */}
-          <div className="flex flex-wrap gap-x-[70px] gap-y-[24px]">
+          <div className="flex max-w-[200px] md:max-w-[1200px] flex-wrap gap-x-[40px] md:gap-x-[70px] gap-y-[24px]">
             <FooterColumn title="Produit" links={productLinks} />
             <FooterColumn title="Support" links={supportLinks} />
             <FooterColumn title="Légal" links={legalLinks} />
