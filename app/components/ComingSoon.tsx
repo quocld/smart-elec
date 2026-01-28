@@ -115,16 +115,16 @@ export default function ComingSoon() {
         </div>
 
         {/* Mobile Banner - 2 hàng x 4 items tự động chạy */}
-        <div className="lg:hidden overflow-hidden -mx-[20px] px-[20px]">
+        <div className="lg:hidden overflow-x-hidden overflow-y-visible -mx-[20px] px-[20px] pb-[20px]">
           {/* Row 1 - Chạy từ phải sang trái */}
-          <div className="flex gap-[12px] mb-[12px] animate-scroll-left">
+          <div className="flex gap-[12px] mb-[12px] coming-soon-scroll-left">
             {duplicatedRow1.map((item, idx) => (
               <ComingSoonCard key={`row1-${idx}`} item={item} index={idx} />
             ))}
           </div>
           
           {/* Row 2 - Chạy từ trái sang phải (ngược lại) */}
-          <div className="flex gap-[12px] animate-scroll-right">
+          <div className="flex gap-[12px] coming-soon-scroll-right">
             {duplicatedRow2.map((item, idx) => (
               <ComingSoonCard key={`row2-${idx}`} item={item} index={idx} />
             ))}

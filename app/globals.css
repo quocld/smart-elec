@@ -42,7 +42,7 @@ body {
 }
 
 /* Infinite scroll animations for ComingSoon banner */
-@keyframes scroll-left {
+@keyframes coming-soon-scroll-left {
   0% {
     transform: translateX(0);
   }
@@ -51,7 +51,7 @@ body {
   }
 }
 
-@keyframes scroll-right {
+@keyframes coming-soon-scroll-right {
   0% {
     transform: translateX(calc(-50% - 6px));
   }
@@ -60,16 +60,18 @@ body {
   }
 }
 
-.animate-scroll-left {
-  animation: scroll-left 10s linear infinite;
+.coming-soon-scroll-left {
+  animation: coming-soon-scroll-left 10s linear infinite;
+  will-change: transform;
 }
 
-.animate-scroll-right {
-  animation: scroll-right 10s linear infinite;
+.coming-soon-scroll-right {
+  animation: coming-soon-scroll-right 10s linear infinite;
+  will-change: transform;
 }
 
 /* Pause animation on hover */
-.animate-scroll-left:hover,
-.animate-scroll-right:hover {
+.coming-soon-scroll-left:hover,
+.coming-soon-scroll-right:hover {
   animation-play-state: paused;
 }
